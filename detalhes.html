@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+          <div class="logo">
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+          </div>
+        </a>
+        <div class="menu">
+          <a href="#" onclick="scrollToAcervo()" class="ul">Ver galeria</a>
+          <a href="" class="ul" >Meu perfil</a>
+          
+        </div>
+    </header>
+    <div class="main">
+    <div class="principal">
+        <div class="amostra">
+        <img  class="img-livro" src="opoderdohabito.png"/>
+        </div>
+        <div class="resumo">
+            <h1>O PODER DO HÁBITO</h1>
+            <p>Como o próprio subtítulo diz, o objetivo do estudo é explicar por que fazemos o que fazemos. Ou seja, é uma reflexão que aborda como essa capacidade de fazermos coisas de forma subconsciente, com um menor esforço cerebral tende a criar padrões em nossas vidas.</p>
+            <p>Autor: Charles Duhigg </p>
+            <p>Disponibilidade: Disponível</p>
+            <button>Solicitar empréstimo</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form_group">
+            <form class="avaliacao_form" method="post" action="/avaliar">
+              <h3>O que achou do livro?</h3>
+              <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1"></label>
+              </div>
+              <div class="row">
+              <textarea id="comentario" name="comentario" placeholder="Deixe um comentário"></textarea>
+              <button type="submit" class="submit_btn_bt">Enviar Feedback</button>
+            </div>
+            </form>
+          </div>
+        <div class="avaliacoes">
+            <div class="avaliacao_item">
+                <div class="foto">
+                    <img class="avatar" src="user.png" alt="Foto do usuário" />
+                </div>
+                <div class="avaliacao_usuario">
+                  <div class="avaliacao_detalhes">
+                    <p class="avaliacao_nome">Mayara Duarte</p>
+                      <div class="avaliacao_estrelas">
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                        <span class="data_avaliacao">11/10/2024</span>
+                      </div>
+                    <p class="avaliacao_comentario">Um livro incrível! A história é envolvente e os personagens são muito bem desenvolvidos.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="avaliacao_item">
+                <div class="foto">
+                    <img class="avatar" src="user.png" alt="Foto do usuário" />
+                </div>
+                <div class="avaliacao_usuario">
+                  <div class="avaliacao_detalhes">
+                    <p class="avaliacao_nome">Maria Silva</p>
+                      <div class="avaliacao_estrelas">
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                        <span class="data_avaliacao">14/10/2024</span>
+                      </div>
+                    <p class="avaliacao_comentario">Gostei bastante, mas achei o final um pouco previsível.</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+</div>
+    <div class="footer">
+        <div>
+            <h1>Idealizado por:</h1>
+            <p>Mayara Duarte</p>
+            <p>Ygor Souza</p>
+            <p>Taissa Severo</p>
+            <p>Ritielen Silva</p>
+        </div>
+        <div>
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+        </div>
+        <div> 
+           <h1>Escola Nova Horizonte</h1> 
+           <p>Rua da Educação, 45, Centro, Bagé - RS</p>
+           <div class="social-media">
+            <div class="icons-media">
+            <a href="https://facebook.com"><img  width="30px;" height="30px;" src="facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="icons-media">
+            <a href="https://web.whatsaoo.com"><img width="30px;" height="30px;" src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <style>
+        .avaliacao_item {
+          display: flex;
+          align-items: flex-start;
+        }
+      
+        .estrela {
+          display: inline-block;
+          width: 12px;
+          height: 12px;
+          background-color: #ffc107;
+          clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+        }
+      
+        .foto{
+          display: flex;
+        }
+        .foto img{
+          width: 40px;
+          height: 40px;
+        }
+
+        .avaliacao_usuario {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      
+        .avatar {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 10px;
+        }
+      
+        .data_avaliacao {
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      
+        .avaliacao_detalhes {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      
+        .rating input {
+          display: none;
+        }
+      
+        .rating label {
+          display: inline-block;
+          padding: 5px;
+          font-size: 24px;
+          color: #ccc;
+          cursor: pointer;
+        }
+      
+        .rating label::before {
+          content: "\2605";
+          border: 1px solid #fff; /* Altere a cor da borda aqui */
+        }
+      
+        .rating input:checked ~ label,
+        .rating input:checked ~ label ~ label {
+          color: #ffc107; /* Altere a cor do preenchimento aqui */
+        }
+      
+        .rating label:hover,
+        .rating label:hover ~ label {
+          color: #ffc107; /* Altere a cor do preenchimento ao passar o mouse aqui */
+        }
+
+        .rating{
+          padding-left: 15px;
+        }
+      
+        .avaliacao_estrelas {
+          color: #ffc107; /* Cor das estrelas preenchidas */
+        }
+      
+        .avaliacao_estrelas i {
+          font-size: 24px;
+        }
+      
+        .avaliacao_comentario {
+          font-weight: normal;
+        }
+
+        .rating{
+          display: flex;
+          gap: 15px;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+        }
+      </style>

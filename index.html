@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+          <div class="logo">
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+          </div>
+        </a>
+        <div class="menu">
+          <a href="#" onclick="scrollToAcervo()" class="ul">Ver galeria</a>
+          <a href="" class="ul" >Meu perfil</a>
+          
+        </div>
+    </header>
+    <div class="content">
+        <div class="lado-1">
+            <img src="img.png"/>
+        </div>
+        <div class="lado-2">
+          <h1>Biblioteca Online</h1>
+          <p>Sua estante virtual de conhecimentos.</p>
+          <div class="descricao">
+              <h2>Por que escolher a Estante Virtual?</h2>
+              <ul>
+                  <li>
+                      <img src="access.png" alt="Acesso imediato" />
+                      <p>Acesso imediato aos livros digitais e físicos da sua escola.</p>
+                  </li>
+                  <li>
+                      <img src="cloud.png" alt="Armazenamento na nuvem" />
+                      <p>Melhor agendamento de livros.</p>
+                  </li>
+                  <li>
+                      <img src="community.png" alt="Comunidade ativa" />
+                      <p>Junte-se a uma comunidade de leitores da sua escola.</p>
+                  </li>
+              </ul>
+          </div>
+          <button type="button">Explorar Acervo</button>
+          
+      </div>
+      
+    </div>
+    <div class="history">
+        <h1>História da Escola</h1>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <p>A Escola Nova Horizonte foi fundada em 1965 com o objetivo de oferecer uma educação de qualidade em uma pequena cidade, impulsionada pelo sonho de educadores apaixonados. O que começou como uma modesta instituição com apenas duas salas de aula e um pequeno corpo docente, rapidamente ganhou reconhecimento pela sua dedicação ao ensino e pelos valores de inclusão e cidadania que promovia.</p>
+                    <img src="img1.jpg" alt="Imagem 1">
+                </div>
+                <div class="slide">
+                    <p>Ao longo das décadas, a escola evoluiu, integrando novas metodologias de ensino, tecnologias e atividades extracurriculares, tornando-se referência na região.</p>
+                    <img src="img2.jpg" alt="Imagem 2">
+                </div>
+                <div class="slide">
+                    <p>Hoje, a Escola Nova Horizonte continua a formar gerações de alunos comprometidos com a transformação social, sempre com o lema "Aprender para Crescer".</p>
+                    <img src="img3.jpg" alt="Imagem 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="acervo">
+        <h1>Galeria de livros</h1>
+        <ul class="menu-options">
+            <li class="active" data-category="all">Todos</li>
+            <li data-category="ficcao">Ficção</li>
+            <li data-category="romance">Romance</li>
+            <li data-category="fantasia">Fantasia</li>
+            <li data-category="ciencia">Ciência</li>
+          </ul>
+        
+        <div class="livros">
+            <div class="livro-card ciencia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="opoderdohabito.png" alt="Donut 1" />
+                  </div>
+                  <h3>O PODER DO HÁBITO</h3>
+                  <p class="autor">Por: Charles Duhigg</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card romance">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="eassimqueacaba.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>É ASSIM QUE ACABA</h3>
+                  <p class="autor">Por: Colleen Hoover</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card ciencia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="livro3.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>DESBLOQUEIE O PODER DA SUA MENTE</h3>
+                  <p class="autor">Por: Michael Arruda</p>
+                  <p class="nao-disponivel">Indisponível</p>
+
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card ficcao">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="livro4.webp" alt="Donut 1" />
+                  </div>
+                  <h3>TEXTOS PARA TOCAR CICATRIZES</h3>
+                  <p class="autor">Por: Igor Pires</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card fantasia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="livro5.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>O PEQUENO PRINCIPE</h3>
+                  <p class="autor">Por: Antoine De Saint-Exupéry</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card romance">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="livro6.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>ORGULHO E PRECONCEITO</h3>
+                  <p class="autor">Por: Jane Austen</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card ciencia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="livro7.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>ENTENDENDO ALGORITMOS</h3>
+                  <p class="autor">Por: Aditya Y. Barghava</p>
+                  <p class="nao-disponivel">Indisponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h1>Idealizado por:</h1>
+            <p>Mayara Duarte</p>
+            <p>Ygor Souza</p>
+            <p>Taissa Severo</p>
+            <p>Ritielen Silva</p>
+        </div>
+        <div>
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+        </div>
+        <div> 
+           <h1>Escola Nova Horizonte</h1> 
+           <p>Rua da Educação, 45, Centro, Bagé - RS</p>
+           <div class="social-media">
+            <div class="icons-media">
+            <a href="https://facebook.com"><img  width="30px;" height="30px;" src="facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="icons-media">
+            <a href="https://web.whatsaoo.com"><img width="30px;" height="30px;" src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+  window.addEventListener('load', function() {
+      document.querySelector('.lado-1').classList.add('in-view');
+      document.querySelector('.lado-2').classList.add('in-view');
+  });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const menuItems = document.querySelectorAll('.menu-options li');
+  const cards = document.querySelectorAll('.livro-card');
+
+  menuItems.forEach(function(menuItem) {
+    menuItem.addEventListener('click', function() {
+      const selectedCategory = this.getAttribute('data-category');
+
+ 
+      menuItems.forEach(function(item) {
+        item.classList.remove('active');
+      });
+
+
+      this.classList.add('active');
+
+
+      cards.forEach(function(card) {
+        if (selectedCategory === 'all' || card.classList.contains(selectedCategory)) {
+          card.classList.remove('hidden'); 
+        } else {
+          card.classList.add('hidden'); 
+        }
+      });
+    });
+  });
+});
+
+</script>
+<script src="main.js"></script>

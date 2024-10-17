@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+          <div class="logo">
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+          </div>
+        </a>
+        <div class="menu">
+          <a href="#" onclick="scrollToAcervo()" class="ul">Ver galeria</a>
+          <a href="" class="ul" >Meu perfil</a>
+          
+        </div>
+    </header>
+    <div class="main-perfil">
+        <div class="perfil">
+            <div class="foto">
+                <img src="user.webp" alt="Foto do Usuário"/>
+            </div>
+            <div class="info">
+                <h2>Mayara Duarte</h2>
+                <p>Data de nascimento: <span> 25/03/003</span></p>
+                <p>Turma: <span>3 TADS</span></p>
+                <p>Telefone: <span>53999999999</span></p>
+                <p>E-mail: <span>mayaragoncalvesduarte@gmail.com</span></p>
+            </div>
+            <div class="edit-icon">
+              <a href="#" id="edit-button"><img src="edit-2.png" alt="Editar"/></a>
+            </div>
+            <form id="perfil-form" action="/salvarperfil" method="POST" style="display: none;">
+              <p>Data de nascimento: <input type="text" name="nascimento" id="nascimento"></p>
+              <p>Telefone: <input type="text" name="telefone" id="telefone"></p>
+              <p>E-mail:<br>
+                 <input type="email"  name="email" id="email"></p>
+              <button type="submit">Salvar</button>
+            </form>
+        </div>
+        
+        <div class="historico">
+            <h2>Histórico de Empréstimo</h2>
+            <ul class="menu-options">
+                <li class="active" data-category="all">Todos</li>
+                <li data-category="entregue">Entregue</li>
+                <li data-category="pendente">Pendentes</li>
+                <li data-category="atrasado">Atrasados</li>
+              </ul>
+
+            <div class="historico-item">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="livro5.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Título do Livro:</strong> Desbloqueie o poder da sua mente</p>
+                <p><strong>Data de Início:</strong> 01/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> 14/10/2024</p>
+                <p data-category="entregue"><strong>Status:</strong> <span class="status entregue">Entregue</span></p>
+                <p><strong>Observações:</strong> Livro devolvido em boas condições.</p>
+            </div>  
+            </div>
+            <div class="historico-item">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="livro6.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Título do Livro:</strong> Orgulho e preconceito</p>
+                <p><strong>Data de Início:</strong> 05/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> </p>
+                <p data-category="pendente"><strong>Status:</strong> <span class="status pendente">Pendente</span></p>
+                <p><strong>Observações:</strong> </p>
+            </div>  
+            </div>
+            </div>
+    
+    </div>
+    <div class="footer">
+        <div>
+            <h1>Idealizado por:</h1>
+            <p>Mayara Duarte</p>
+            <p>Ygor Souza</p>
+            <p>Taissa Severo</p>
+            <p>Ritielen Silva</p>
+        </div>
+        <div>
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+        </div>
+        <div> 
+           <h1>Escola Nova Horizonte</h1> 
+           <p>Rua da Educação, 45, Centro, Bagé - RS</p>
+           <div class="social-media">
+            <div class="icons-media">
+            <a href="https://facebook.com"><img  width="30px;" height="30px;" src="facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="icons-media">
+            <a href="https://web.whatsaoo.com"><img width="30px;" height="30px;" src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+  <script>
+const editButton = document.getElementById('edit-button');
+const form = document.getElementById('perfil-form');
+const infoDiv = document.querySelector('.info');
+
+const userData = {
+  nome: infoDiv.querySelector('h2').innerText,
+  nascimento: infoDiv.querySelector('p:nth-of-type(1) span').innerText,
+  turma: infoDiv.querySelector('p:nth-of-type(2) span').innerText,
+  telefone: infoDiv.querySelector('p:nth-of-type(3) span').innerText,
+  email: infoDiv.querySelector('p:nth-of-type(4) span').innerText
+};
+
+editButton.addEventListener('click', function(e) {
+  e.preventDefault();
+
+  form.querySelector('#nascimento').value = userData.nascimento;
+  form.querySelector('#telefone').value = userData.telefone;
+  form.querySelector('#email').value = userData.email;
+
+  infoDiv.style.display = 'none';
+  form.style.display = 'block';
+});
+
+    </script>
+<script>
+const items = document.querySelectorAll('.historico-item');
+const filterMenu = document.querySelectorAll('.menu-options li');
+
+filterMenu.forEach(menu => {
+  menu.addEventListener('click', function() {
+    filterMenu.forEach(item => item.classList.remove('active'));
+
+    this.classList.add('active');
+
+    const category = this.getAttribute('data-category');
+
+    items.forEach(item => {
+      const status = item.querySelector('p[data-category]'); 
+      if (category === 'all' || status.getAttribute('data-category') === category) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  });
+});
+
+</script>
+<style>
+  input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botão salvar */
+.save-container {
+  margin-top: 15px;
+}
+
+.save-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-container button:hover {
+  background-color: #0056b3;
+}
+</style>
