@@ -29,8 +29,9 @@
             <h1>O PODER DO HÁBITO</h1>
             <p>Como o próprio subtítulo diz, o objetivo do estudo é explicar por que fazemos o que fazemos. Ou seja, é uma reflexão que aborda como essa capacidade de fazermos coisas de forma subconsciente, com um menor esforço cerebral tende a criar padrões em nossas vidas.</p>
             <p>Autor: Charles Duhigg </p>
-            <p>Disponibilidade: Disponível</p>
-            <button>Solicitar empréstimo</button>
+            <p class="disponibilidade">Disponibilidade: <span id="status-disponibilidade">Disponível</span></p>
+             <button id="btn-solicitar" style="display: none;">Solicitar empréstimo</button>
+    </div>
         </div>
     </div>
     <div class="container">
@@ -221,3 +222,16 @@
           justify-content: flex-end;
         }
       </style>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const disponibilidade = document.getElementById('status-disponibilidade').innerText;
+    const btnSolicitar = document.getElementById('btn-solicitar');
+
+    // Verifica a disponibilidade do livro ao carregar a página
+    if (disponibilidade === 'Disponível') {
+        btnSolicitar.style.display = 'block'; // Mostra o botão se disponível
+    } else {
+        btnSolicitar.style.display = 'none'; // Oculta o botão se indisponível
+    }
+  });
+      </script>
