@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+          <div class="logo">
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+          </div>
+        </a>
+        <div class="menu">
+          <a href="#" onclick="scrollToAcervo()" class="ul">Página inicial</a>
+          <a href="" class="ul" >Histórico de agendamentos</a>
+          <a href="" class="ul" >Cadastro de livros</a>
+          <a href="" class="ul" >Visualizar livros</a>
+          <a href="" class="ul" >Agendamentos</a>
+          <a href="" class="ul" >Usuários</a>
+          <a href="" class="ul" >Relatórios</a>
+        </div>
+    </header>
+    <div class="principal-historico">
+        <div class="row center">
+        <ul class="menu-options">
+            <li class="active" data-category="all">Todos</li>
+            <li data-category="em-emprestimo">Em empréstimo</li>
+            <li data-category="entregue">Entregues</li>
+            <li data-category="pendente">Pendentes</li>
+            <li data-category="atrasado">Atrasados</li>
+          </ul>
+          <div class="relatorio-livros">
+            <button class="relatorio">Emitir Relatório</button>
+          </div>
+          </div>
+          
+
+        <div class="historico-container">
+            <div class="historico-item hist">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="livro5.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Mayara Duarte</a></p>
+                <p><strong>Título do Livro:</strong> <a href="/detalhes/id-livro" class="usuario-link">Desbloqueie o poder da sua mente</a></p>
+                <p><strong>Data de Início:</strong> 01/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> 14/10/2024</p>
+                <p data-category="entregue"><strong>Status:</strong> <span class="status entregue">Entregue</span></p>
+                <p><strong>Observações:</strong> Livro devolvido em boas condições.</p>
+            </div>  
+            </div>
+            <div class="historico-item hist">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="livro6.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Taissa Severo</a></p>
+                <p><strong>Título do Livro:</strong> <a href="/detalhes/id-livro" class="usuario-link">Orgulho e preconceito</a></p>
+                <p><strong>Data de Início:</strong> 05/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> </p>
+                <p data-category="pendente"><strong>Status:</strong> <span class="status pendente">Pendente</span></p>
+                <p><strong>Observações:</strong> </p>
+            </div>  
+            </div>
+            <div class="historico-item hist">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="livro7.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Lucas Correa</a></p>
+                <p><strong>Título do Livro:</strong> <a href="/detalhes/id-livro" class="usuario-link">Entendendo algoritmos</a></p>
+                <p><strong>Data de Início:</strong> 05/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 31/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> </p>
+                <p data-category="em-emprestimo"><strong>Status:</strong> <span class="status pendente">Em empréstimo</span></p>
+                <p><strong>Observações:</strong> </p>
+            </div>  
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            <h1>Idealizado por:</h1>
+            <p>Mayara Duarte</p>
+            <p>Ygor Souza</p>
+            <p>Taissa Severo</p>
+            <p>Ritielen Silva</p>
+        </div>
+        <div>
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+        </div>
+        <div> 
+           <h1>Escola Nova Horizonte</h1> 
+           <p>Rua da Educação, 45, Centro, Bagé - RS</p>
+           <div class="social-media">
+            <div class="icons-media">
+            <a href="https://facebook.com"><img  width="30px;" height="30px;" src="facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="icons-media">
+            <a href="https://web.whatsaoo.com"><img width="30px;" height="30px;" src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        const items = document.querySelectorAll('.historico-item');
+        const filterMenu = document.querySelectorAll('.menu-options li');
+        
+        filterMenu.forEach(menu => {
+          menu.addEventListener('click', function() {
+            filterMenu.forEach(item => item.classList.remove('active'));
+        
+            this.classList.add('active');
+        
+            const category = this.getAttribute('data-category');
+        
+            items.forEach(item => {
+              const status = item.querySelector('p[data-category]'); 
+              if (category === 'all' || status.getAttribute('data-category') === category) {
+                item.style.display = '';
+              } else {
+                item.style.display = 'none';
+              }
+            });
+          });
+        });
+        
+        </script>

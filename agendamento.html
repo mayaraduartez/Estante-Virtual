@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+          <div class="logo">
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+          </div>
+        </a>
+        <div class="menu">
+          <a href="#" onclick="scrollToAcervo()" class="ul">Página inicial</a>
+          <a href="" class="ul" >Histórico de agendamentos</a>
+          <a href="" class="ul" >Cadastro de livros</a>
+          <a href="" class="ul" >Visualizar livros</a>
+          <a href="" class="ul" >Agendamentos</a>
+          <a href="" class="ul" >Usuários</a>
+          <a href="" class="ul" >Relatórios</a>
+        </div>
+    </header>
+    <div class="principal">
+        <div class="cadastro-container">
+            <h1>Criar Agendamento</h1>
+            <form id="cadastro-agendamento" action="/cadastrar-agendamento" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome do Livro:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite o nome do livro" required>
+                    <ul id="livros-lista" class="dropdown hidden">
+                        <li data-value="Orgulho e Preconceito">Orgulho e Preconceito</li>
+                        <li data-value="Entendendo Algoritmos">Entendendo Algoritmos</li>
+                    </ul>
+                </div>
+                <div class="form-group">
+                    <label for="aluno">Aluno:</label>
+                    <input type="text" id="aluno" name="aluno" placeholder="Digite o nome do aluno" required>
+                    <ul id="alunos-lista" class="dropdown hidden">
+                        <li data-value="João Silva">João Silva</li>
+                        <li data-value="Maria Oliveira">Maria Oliveira</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <label for="date-entrega">Data de entrega:</label>
+                    <input type="date" id="date-entrega" name="date-entrega" required>
+                </div>
+                
+                <div class="button-cadastro">
+                    <button type="submit" style="background-color: #007BFF;">Criar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+    <div class="footer">
+        <div>
+            <h1>Idealizado por:</h1>
+            <p>Mayara Duarte</p>
+            <p>Ygor Souza</p>
+            <p>Taissa Severo</p>
+            <p>Ritielen Silva</p>
+        </div>
+        <div>
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+        </div>
+        <div> 
+           <h1>Escola Nova Horizonte</h1> 
+           <p>Rua da Educação, 45, Centro, Bagé - RS</p>
+           <div class="social-media">
+            <div class="icons-media">
+            <a href="https://facebook.com"><img  width="30px;" height="30px;" src="facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="icons-media">
+            <a href="https://web.whatsaoo.com"><img width="30px;" height="30px;" src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        </div>
+    </div>
+    <style>
+  .dropdown {
+      max-height: 150px;
+      overflow-y: auto;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      border: 1px solid #ccc;
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+  }
+
+  .dropdown li {
+      padding: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  .dropdown li:hover {
+      background-color: #f1f1f1;
+  }
+
+  .hidden {
+      display: none;
+  }
+
+  .form-group {
+      position: relative;
+  }
+
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const livros = ["Orgulho e Preconceito", "Entendendo Algoritmos"];
+    const alunos = ["João Silva", "Maria Oliveira"];
+
+    const nomeInput = document.getElementById('nome');
+    const livrosLista = document.getElementById('livros-lista');
+    const alunoInput = document.getElementById('aluno');
+    const alunosLista = document.getElementById('alunos-lista');
+
+    function filterOptions(input, list, options) {
+        const searchTerm = input.value.toLowerCase();
+        const filteredOptions = options.filter(option => option.toLowerCase().includes(searchTerm));
+
+        list.innerHTML = '';
+        if (filteredOptions.length > 0) {
+            filteredOptions.forEach(option => {
+                const li = document.createElement('li');
+                li.textContent = option;
+                li.setAttribute('data-value', option);
+                list.appendChild(li);
+            });
+            list.classList.remove('hidden');
+        } else {
+            list.classList.add('hidden');
+        }
+    }
+
+    // Eventos para filtrar enquanto digita
+    nomeInput.addEventListener('input', function() {
+        filterOptions(nomeInput, livrosLista, livros);
+    });
+
+    alunoInput.addEventListener('input', function() {
+        filterOptions(alunoInput, alunosLista, alunos);
+    });
+
+    // Função para preencher o campo de input ao clicar no item
+    livrosLista.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            nomeInput.value = event.target.getAttribute('data-value');
+            livrosLista.classList.add('hidden');
+        }
+    });
+
+    alunosLista.addEventListener('click', function(event) {
+        if (event.target.tagName === 'LI') {
+            alunoInput.value = event.target.getAttribute('data-value');
+            alunosLista.classList.add('hidden');
+        }
+    });
+
+    // Ocultar lista ao clicar fora
+    document.addEventListener('click', function(event) {
+        if (!nomeInput.contains(event.target)) {
+            livrosLista.classList.add('hidden');
+        }
+        if (!alunoInput.contains(event.target)) {
+            alunosLista.classList.add('hidden');
+        }
+    });
+});
+
+</script>

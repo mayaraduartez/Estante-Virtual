@@ -72,7 +72,11 @@
            <button class="next">&#10095;</button>
     </div>
     <div class="acervo">
+      
         <h1>Galeria de livros</h1>
+        <div class="search">
+    <input placeholder="Pesquise o nome da obra" type="text" name="text" id="search" class="input">
+  </div>
         <ul class="menu-options">
             <li class="active" data-category="all">Todos</li>
             <li data-category="ficcao">Ficção</li>
@@ -181,38 +185,69 @@
       document.querySelector('.lado-2').classList.add('in-view');
   });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-  const menuItems = document.querySelectorAll('.menu-options li');
-  const cards = document.querySelectorAll('.livro-card');
 
-  menuItems.forEach(function(menuItem) {
-    menuItem.addEventListener('click', function() {
-      const selectedCategory = this.getAttribute('data-category');
-
- 
-      menuItems.forEach(function(item) {
-        item.classList.remove('active');
-      });
-
-
-      this.classList.add('active');
-
-
-      cards.forEach(function(card) {
-        if (selectedCategory === 'all' || card.classList.contains(selectedCategory)) {
-          card.classList.remove('hidden'); 
-        } else {
-          card.classList.add('hidden'); 
-        }
-      });
-    });
-  });
-});
-
-</script>
 <script src="main.js"></script>
 <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const menuItems = document.querySelectorAll('.menu-options li');
+      const cards = document.querySelectorAll('.livro-card');
+      const searchInput = document.getElementById('search');
+  
+      // Função de debounce
+      function debounce(func, delay) {
+          let timeout;
+          return function(...args) {
+              clearTimeout(timeout);
+              timeout = setTimeout(() => func.apply(this, args), delay);
+          };
+      }
+  
+      // Função de pesquisa
+      function searchBooks() {
+          const searchTerm = searchInput.value.toLowerCase(); // Obtém o termo de pesquisa
+  
+          cards.forEach(card => {
+              const livroTitle = card.querySelector('h3').innerText.toLowerCase(); // Obtém o título do livro
+              const isVisible = card.style.display !== 'none'; // Verifica se o cartão está visível
+  
+              // Verifica se o título do livro inclui o termo de pesquisa
+              if (livroTitle.includes(searchTerm) && isVisible) {
+                  card.style.display = 'block'; // Exibe o cartão do livro se corresponder
+              } else {
+                  card.style.display = 'none'; // Oculta o cartão do livro se não corresponder
+              }
+          });
+      }
+  
+      // Adiciona o evento de entrada com debounce para pesquisa
+      searchInput.addEventListener('input', debounce(searchBooks, 300)); // Aguarda 300ms antes de chamar a função
+  
+      menuItems.forEach(function(menuItem) {
+          menuItem.addEventListener('click', function() {
+              const selectedCategory = this.getAttribute('data-category');
+  
+              menuItems.forEach(function(item) {
+                  item.classList.remove('active');
+              });
+  
+              this.classList.add('active');
+  
+              // Filtrar cartões com base na categoria selecionada
+              cards.forEach(function(card) {
+                  if (selectedCategory === 'all' || card.classList.contains(selectedCategory)) {
+                      card.style.display = 'block'; // Exibe o cartão do livro se corresponder à categoria
+                  } else {
+                      card.style.display = 'none'; // Oculta o cartão do livro se não corresponder
+                  }
+              });
+  
+              // Após filtrar, reexecuta a pesquisa para manter a funcionalidade
+              searchBooks();
+          });
+      });
+  });
+  </script>
+  <script>
   const slides = document.querySelector('.slides');
 const slide = document.querySelectorAll('.slide');
 let currentIndex = 0;

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Biblioteca Online</title>
+</head>
+<body>
+    <header>
+        <a href="/">
+          <div class="logo">
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+          </div>
+        </a>
+        <div class="menu">
+          <a href="#" onclick="scrollToAcervo()" class="ul">Página inicial</a>
+          <a href="" class="ul" >Histórico de agendamentos</a>
+          <a href="" class="ul" >Cadastro de livros</a>
+          <a href="" class="ul" >Visualizar livros</a>
+          <a href="" class="ul" >Agendamentos</a>
+          <a href="" class="ul" >Usuários</a>
+          <a href="" class="ul" >Relatórios</a>
+        </div>
+    </header>
+    <div class="principal">
+        <div class="cadastro-container">
+            <h1>Cadastro de Livros</h1>
+            <form id="cadastro-livro" action="/cadastrar-livro" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome do Livro:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="autor">Autor:</label>
+                    <input type="text" id="autor" name="autor" required>
+                </div>
+                <div class="form-group">
+                    <label for="resumo">Resumo:</label>
+                    <textarea id="resumo" name="resumo" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="catalogacao">Catalogação:</label>
+                    <input type="text" id="catalogacao" name="catalogacao" required>
+                </div>
+                <div class="form-group">
+                    <label for="paginas">Número de páginas: </label>
+                    <input type="number" id="paginas" name="paginas" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="exemplar">Quantos exemplares:</label>
+                    <input type="number" id="exemplar" name="exemplar" min="0" required>
+                </div>
+                <div class="button-cadastro">
+                <button type="submit" style="background-color: #007BFF;">Cadastrar Livro</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div>
+            <h1>Idealizado por:</h1>
+            <p>Mayara Duarte</p>
+            <p>Ygor Souza</p>
+            <p>Taissa Severo</p>
+            <p>Ritielen Silva</p>
+        </div>
+        <div>
+            <img class="icon-logo" src="logo_estante.png" />
+            <h1>Estante Virtual</h1>
+        </div>
+        <div> 
+           <h1>Escola Nova Horizonte</h1> 
+           <p>Rua da Educação, 45, Centro, Bagé - RS</p>
+           <div class="social-media">
+            <div class="icons-media">
+            <a href="https://facebook.com"><img  width="30px;" height="30px;" src="facebook.png" alt="Facebook"></a>
+        </div>
+        <div class="icons-media">
+            <a href="https://web.whatsaoo.com"><img width="30px;" height="30px;" src="whatsapp.png" alt="Whatsapp"></a>
+            </div>
+        </div>
+        </div>
+    </div>

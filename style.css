@@ -434,6 +434,7 @@ button.prev:hover, button.next:hover {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    align-items: center;
 }
 
 .form_group h3{
@@ -644,3 +645,251 @@ textarea#comentario {
     width: auto;
     height: 50%;
   }
+
+  .adm{
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    padding: 30px;
+    align-items: flex-start;
+  }
+
+  .logout{
+    position: absolute;
+    bottom: 70px;
+    left: 14%;
+  }
+
+  .principal-historico{
+    min-height: 70vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 30px;
+  }
+
+  .hist{
+    width:40%;
+    flex: 1 1 calc(33.33% - 40px);
+  }
+
+  .historico-container {
+    width: 80vw;
+    min-height: 30vh;
+    background-color: #fff;
+    border-radius: 35px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+p .usuario-link {
+  color: #007BFF; 
+  text-decoration: none; 
+  font-weight: bold; 
+  transition: color 0.3s ease; 
+}
+
+p .usuario-link:hover {
+  color: #0056b3; 
+  text-decoration: underline; 
+}
+
+.relatorio{
+  margin:0px;
+}
+
+.cadastro-container {
+  width: 80vw;
+  max-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.cadastro-container .form-group {
+  margin-bottom: 15px;
+}
+
+.cadastro-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color:#595757;
+}
+
+.cadastro-container input[type="text"],
+.cadastro-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.cadastro-container input[type="date"] {
+  width: 20%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.cadastro-container textarea {
+  resize: vertical; 
+}
+
+.cadastro-container .button-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cadastro-container button:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+.cadastro-container h1{
+  font-size: 2rem;
+    color: #007A7A; 
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.card {
+  --bg-card: #27272a;
+  --primary: #6d28d9;
+  --primary-800: #4c1d95;
+  --primary-shadow: #2e1065;
+  --light: #d9d9d9;
+  --zinc-800: #18181b;
+  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  width: 14rem;
+  background-color: #ffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+.image_container {
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 5;
+  width: 100%;
+  height: 170px;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image_container .image {
+  width: auto;
+  height: 100%;
+}
+
+.title {
+  overflow: clip;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #595757;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.size {
+  font-size: 0.75rem;
+  color: #595757;
+  text-align: center;
+
+}
+
+.input {
+  width: 100%;
+  max-width: 220px;
+  height: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid lightgrey;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.input:hover {
+  border: 2px solid lightgrey;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid grey;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #ffff;
+  text-wrap: nowrap;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.visualizar{
+  display: flex;
+  flex-direction: column;
+}
+
+.visualizar h2 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: bold;
+  color: #049696;
+  text-align: center;
+  padding: 30px;
+}
+
+.edit{
+  gap:40px;
+}
