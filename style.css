@@ -637,8 +637,13 @@ textarea#comentario {
   }
   
   .img-historico{
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+  }
+
+  .img-historico img {
+    width: auto;
+    height: 100%;
   }
 
   .img-livro{
@@ -726,12 +731,14 @@ p .usuario-link:hover {
 }
 
 .cadastro-container input[type="text"],
-.cadastro-container textarea {
+.cadastro-container textarea,
+.cadastro-container select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  box-sizing: border-box; 
 }
 
 .cadastro-container input[type="date"] {
@@ -741,6 +748,17 @@ p .usuario-link:hover {
   border-radius: 5px;
   font-size: 16px;
 }
+
+.cadastro-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  appearance: none; /* Remove o estilo padrão do select no navegador */
+  background-color: #fff; /* Cor de fundo consistente */
+}
+
 
 .cadastro-container textarea {
   resize: vertical; 
@@ -901,3 +919,10 @@ p .usuario-link:hover {
   display: flex;
   justify-content: center;
 }
+
+.date-form{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+}
+

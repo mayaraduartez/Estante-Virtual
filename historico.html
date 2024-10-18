@@ -31,18 +31,38 @@
             <li data-category="em-emprestimo">Em empréstimo</li>
             <li data-category="entregue">Entregues</li>
             <li data-category="pendente">Pendentes</li>
-            <li data-category="atrasado">Atrasados</li>
+            <li data-category="liberar">Para liberar</li>
           </ul>
           <div class="relatorio-livros">
             <button class="relatorio">Emitir Relatório</button>
           </div>
           </div>
-          
 
         <div class="historico-container">
-            <div class="historico-item hist">   
+          <div class="historico-item hist" data-category="liberar">   
+            <div class="img-historico">
+                <img src="eassimqueacaba.jpeg">
+            </div> 
+            <div class="column">      
+            <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Ana Maria</a></p>
+            <p><strong>Título do Livro:</strong> <a href="/detalhes/id-livro" class="usuario-link">É assim que acaba</a></p>
+            <p><strong>Data de pedido:</strong> 01/10/2024</p>
+            <p><strong>Status:</strong> <span class="status liberar"> À Liberar</span></p>
+            <button id="liberar" style="background-color: #90EE90;">Liberar empréstimo</button>
+            <div  id="date" style="display: none;">
+              <form class="date-form" action="/cadastrar-agendamento" method="post">
+              <p><strong>Data de entrega:</strong></p>
+              <input type="date" id="date-entrega" name="date-entrega" required>
+              <button type="submit" >Concluir</button>
+              </form>
+              
+
+            </div>
+        </div>  
+        </div>
+            <div class="historico-item hist" data-category="entregue">   
                 <div class="img-historico">
-                    <img width="auto;" height="150px;" src="livro5.jpeg">
+                    <img src="livro5.jpeg">
                 </div> 
                 <div class="column">      
                 <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Mayara Duarte</a></p>
@@ -50,13 +70,13 @@
                 <p><strong>Data de Início:</strong> 01/10/2024</p>
                 <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
                 <p><strong>Data de Devolução Real:</strong> 14/10/2024</p>
-                <p data-category="entregue"><strong>Status:</strong> <span class="status entregue">Entregue</span></p>
+                <p><strong>Status:</strong> <span class="status entregue">Entregue</span></p>
                 <p><strong>Observações:</strong> Livro devolvido em boas condições.</p>
             </div>  
             </div>
-            <div class="historico-item hist">   
+            <div class="historico-item hist" data-category="pendente">   
                 <div class="img-historico">
-                    <img width="auto;" height="150px;" src="livro6.jpeg">
+                    <img src="livro6.jpeg">
                 </div> 
                 <div class="column">      
                 <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Taissa Severo</a></p>
@@ -64,13 +84,13 @@
                 <p><strong>Data de Início:</strong> 05/10/2024</p>
                 <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
                 <p><strong>Data de Devolução Real:</strong> </p>
-                <p data-category="pendente"><strong>Status:</strong> <span class="status pendente">Pendente</span></p>
+                <p><strong>Status:</strong> <span class="status pendente">Pendente</span></p>
                 <p><strong>Observações:</strong> </p>
             </div>  
             </div>
-            <div class="historico-item hist">   
+            <div class="historico-item hist" data-category="em-emprestimo">   
                 <div class="img-historico">
-                    <img width="auto;" height="150px;" src="livro7.jpeg">
+                    <img src="livro7.jpeg">
                 </div> 
                 <div class="column">      
                 <p><strong>Usuário:</strong> <a href="/perfil/id-user" class="usuario-link">Lucas Correa</a></p>
@@ -78,7 +98,7 @@
                 <p><strong>Data de Início:</strong> 05/10/2024</p>
                 <p><strong>Data de Entrega Prevista:</strong> 31/10/2024</p>
                 <p><strong>Data de Devolução Real:</strong> </p>
-                <p data-category="em-emprestimo"><strong>Status:</strong> <span class="status pendente">Em empréstimo</span></p>
+                <p><strong>Status:</strong> <span class="status pendente">Em empréstimo</span></p>
                 <p><strong>Observações:</strong> </p>
             </div>  
             </div>
@@ -111,26 +131,44 @@
     </div>
 
     <script>
-        const items = document.querySelectorAll('.historico-item');
-        const filterMenu = document.querySelectorAll('.menu-options li');
-        
-        filterMenu.forEach(menu => {
-          menu.addEventListener('click', function() {
-            filterMenu.forEach(item => item.classList.remove('active'));
-        
-            this.classList.add('active');
-        
-            const category = this.getAttribute('data-category');
-        
-            items.forEach(item => {
-              const status = item.querySelector('p[data-category]'); 
-              if (category === 'all' || status.getAttribute('data-category') === category) {
-                item.style.display = '';
-              } else {
-                item.style.display = 'none';
-              }
-            });
+      const items = document.querySelectorAll('.historico-item');
+      const filterMenu = document.querySelectorAll('.menu-options li');
+    
+      filterMenu.forEach(menu => {
+        menu.addEventListener('click', function() {
+          // Remove a classe ativa de todos os itens do menu
+          filterMenu.forEach(item => item.classList.remove('active'));
+    
+          // Adiciona a classe ativa ao item selecionado
+          this.classList.add('active');
+    
+          // Obtém a categoria selecionada no menu
+          const category = this.getAttribute('data-category');
+    
+          // Filtra os items com base na categoria selecionada
+          items.forEach(item => {
+            // Obtém a categoria diretamente do historico-item
+            const itemCategory = item.getAttribute('data-category');
+    
+            // Verifica se a categoria corresponde ou se 'all' está selecionado
+            if (category === 'all' || itemCategory === category) {
+              item.style.display = 'block'; // Exibe o item se corresponder
+            } else {
+              item.style.display = 'none'; // Oculta o item se não corresponder
+            }
           });
         });
-        
-        </script>
+      });
+    </script>
+    
+
+<script>
+  document.getElementById('liberar').addEventListener('click', function() {
+    const dateDiv = document.getElementById('date');
+    
+    // Exibe a div de data ao clicar no botão
+    if (dateDiv.style.display === 'none' || dateDiv.style.display === '') {
+      dateDiv.style.display = 'block';
+    }
+  });
+</script>
