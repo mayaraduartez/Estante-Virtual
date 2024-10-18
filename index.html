@@ -66,7 +66,10 @@
                     <img src="img3.jpg" alt="Imagem 3">
                 </div>
             </div>
+            
         </div>
+        <button class="prev">&#10094;</button>
+           <button class="next">&#10095;</button>
     </div>
     <div class="acervo">
         <h1>Galeria de livros</h1>
@@ -209,3 +212,24 @@
 
 </script>
 <script src="main.js"></script>
+<script>
+  const slides = document.querySelector('.slides');
+const slide = document.querySelectorAll('.slide');
+let currentIndex = 0;
+const totalSlides = slide.length;
+
+document.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+    updateSlidePosition();
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+    updateSlidePosition();
+});
+
+function updateSlidePosition() {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+</script>

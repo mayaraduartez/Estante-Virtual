@@ -206,39 +206,58 @@ button:hover {
 .slider p {
     color:rgb(66, 63, 63);
     text-align: center;
-    font-size: 25px;
+    font-size: 1.5rem;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  width: 90vw;
 }
 
 .slides {
-    display: flex;
-    width: 90vw;
-    animation: slide-animation 45s infinite;
-    display: flex;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .slide {
-    width: 100%;
-    height: 90vh;
-    flex-shrink: 0;
-    display: flex;
-    gap: 25px;
+  min-width: 100%;
+  height: 90vh;
+  display: flex;
+  gap: 25px;
 }
 
 .slide img {
-    height: 400px;
-    width: auto;
-    object-fit: cover;
-    border-radius: 15px;
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
-@keyframes slide-animation {
-    0% { transform: translateX(0); }
-    33% { transform: translateX(0); }
-    40% { transform: translateX(-100%); }
-    73% { transform: translateX(-100%); }
-    80% { transform: translateX(-200%); }
-    100% { transform: translateX(-200%); }
+button.prev, button.next {
+  position: absolute;
+  top: 150%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
 }
+
+button.prev {
+  left: 10px;
+}
+
+button.next {
+  right: 10px;
+}
+
+button.prev:hover, button.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 
 .acervo{
     min-height: 100vh;
