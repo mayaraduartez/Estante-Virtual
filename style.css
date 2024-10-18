@@ -879,6 +879,9 @@ p .usuario-link:hover {
 .visualizar{
   display: flex;
   flex-direction: column;
+  min-width: 100vw;
+  min-height: 80vh;
+  background-color: #ffff;
 }
 
 .visualizar h2 {
@@ -892,4 +895,9 @@ p .usuario-link:hover {
 
 .edit{
   gap:40px;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
 }
