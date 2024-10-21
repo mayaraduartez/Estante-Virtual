@@ -1,0 +1,79 @@
+<%-include('./cabecalho.ejs')%>
+    <div class="main">
+    <div class="principal">
+        <div class="amostra">
+        <img  class="img-livro" src="opoderdohabito.png"/>
+        </div>
+        <div class="resumo">
+            <h1>O PODER DO HÁBITO</h1>
+            <p>Como o próprio subtítulo diz, o objetivo do estudo é explicar por que fazemos o que fazemos. Ou seja, é uma reflexão que aborda como essa capacidade de fazermos coisas de forma subconsciente, com um menor esforço cerebral tende a criar padrões em nossas vidas.</p>
+            <p>Autor: Charles Duhigg </p>
+            <p>Páginas: 250 </p>
+            <p class="disponibilidade">Disponibilidade: <span id="status-disponibilidade">Disponível</span></p>
+             <button id="btn-solicitar" style="display: none;">Solicitar empréstimo</button>
+    </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form_group">
+            <form class="avaliacao_form" method="post" action="/avaliar">
+              <h3>O que achou do livro?</h3>
+              <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1"></label>
+              </div>
+              <div class="row">
+              <textarea id="comentario" name="comentario" placeholder="Deixe um comentário"></textarea>
+              <button type="submit" class="submit_btn_bt">Enviar Feedback</button>
+            </div>
+            </form>
+          </div>
+        <div class="avaliacoes">
+            <div class="avaliacao_item">
+                <div class="foto">
+                    <img class="avatar" src="user.png" alt="Foto do usuário" />
+                </div>
+                <div class="avaliacao_usuario">
+                  <div class="avaliacao_detalhes">
+                    <p class="avaliacao_nome">Mayara Duarte</p>
+                      <div class="avaliacao_estrelas">
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                        <span class="data_avaliacao">11/10/2024</span>
+                      </div>
+                    <p class="avaliacao_comentario">Um livro incrível! A história é envolvente e os personagens são muito bem desenvolvidos.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="avaliacao_item">
+                <div class="foto">
+                    <img class="avatar" src="user.png" alt="Foto do usuário" />
+                </div>
+                <div class="avaliacao_usuario">
+                  <div class="avaliacao_detalhes">
+                    <p class="avaliacao_nome">Maria Silva</p>
+                      <div class="avaliacao_estrelas">
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                          <span class="estrela"></span>
+                        <span class="data_avaliacao">14/10/2024</span>
+                      </div>
+                    <p class="avaliacao_comentario">Gostei bastante, mas achei o final um pouco previsível.</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+    </div>
+<%-include('./rodape.ejs')%>

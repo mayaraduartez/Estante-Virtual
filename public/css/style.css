@@ -755,8 +755,8 @@ p .usuario-link:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  appearance: none; /* Remove o estilo padrão do select no navegador */
-  background-color: #fff; /* Cor de fundo consistente */
+  appearance: none; 
+  background-color: #fff; 
 }
 
 
@@ -926,3 +926,242 @@ p .usuario-link:hover {
   align-items:flex-start;
 }
 
+.logout-pf{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+.card {
+  border: 1px solid #ddd;
+  flex: 1 1 200px;
+  min-width: 200px; 
+  max-width: 200px; 
+  height: 100%; 
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; 
+  height: 100%; 
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+.foto-liberar {
+  border-radius: 50%;
+}
+
+.row {
+  display: flex;
+  gap: 10px; 
+  justify-content: center; 
+}
+
+.btn-delete {
+  background-color: #ec5353;
+}
+
+.btn-delete:hover {
+  background-color: #f47373;
+}
+
+.btn-success {
+  background-color: #007bff;
+}
+
+.btn-success:hover {
+  background-color: #85b8ef;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.avaliacao_item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.estrela {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ffc107;
+  clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 69% 59%, 82% 100%, 50% 75%, 18% 100%, 31% 59%, 0% 38%, 37% 38%);
+}
+
+.foto{
+  display: flex;
+}
+.foto img{
+  width: 40px;
+  height: 40px;
+}
+
+.avaliacao_usuario {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.data_avaliacao {
+  color: #999999;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.avaliacao_detalhes {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label {
+  display: inline-block;
+  padding: 5px;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.rating label::before {
+  content: "\2605";
+  border: 1px solid #fff; /* Altere a cor da borda aqui */
+}
+
+.rating input:checked ~ label,
+.rating input:checked ~ label ~ label {
+  color: #ffc107; /* Altere a cor do preenchimento aqui */
+}
+
+.rating label:hover,
+.rating label:hover ~ label {
+  color: #ffc107; /* Altere a cor do preenchimento ao passar o mouse aqui */
+}
+
+.rating{
+  padding-left: 15px;
+}
+
+.avaliacao_estrelas {
+  color: #ffc107; /* Cor das estrelas preenchidas */
+}
+
+.avaliacao_estrelas i {
+  font-size: 24px;
+}
+
+.avaliacao_comentario {
+  font-weight: normal;
+}
+
+.rating{
+  display: flex;
+  gap: 15px;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.save-container {
+  margin-top: 15px;
+}
+
+.save-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-container button:hover {
+  background-color: #0056b3;
+}
+
+.dropdown {
+  max-height: 150px;
+  overflow-y: auto;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.dropdown li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown li:hover {
+  background-color: #f1f1f1;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-group {
+  position: relative;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.save-container {
+  margin-top: 15px;
+}
+
+.save-container button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-container button:hover {
+  background-color: #0056b3;
+}

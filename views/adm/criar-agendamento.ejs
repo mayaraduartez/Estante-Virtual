@@ -1,0 +1,50 @@
+<%-include('./cabecalho.ejs')%>
+<div class="principal">
+  <div class="cadastro-container">
+    <h1>Criar Agendamento</h1>
+    <form
+      id="cadastro-agendamento"
+      action="/cadastrar-agendamento"
+      method="POST"
+    >
+      <div class="form-group">
+        <label for="nome">Nome do Livro:</label>
+        <input
+          type="text"
+          id="nome"
+          name="nome"
+          placeholder="Digite o nome do livro"
+          required
+        />
+        <ul id="livros-lista" class="dropdown hidden">
+          <li data-value="Orgulho e Preconceito">Orgulho e Preconceito</li>
+          <li data-value="Entendendo Algoritmos">Entendendo Algoritmos</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="aluno">Aluno:</label>
+        <input
+          type="text"
+          id="aluno"
+          name="aluno"
+          placeholder="Digite o nome do aluno"
+          required
+        />
+        <ul id="alunos-lista" class="dropdown hidden">
+          <li data-value="João Silva">João Silva</li>
+          <li data-value="Maria Oliveira">Maria Oliveira</li>
+        </ul>
+      </div>
+      <div class="row">
+        <label for="date-entrega">Data de entrega:</label>
+        <input type="date" id="date-entrega" name="date-entrega" required />
+      </div>
+
+      <div class="button-cadastro">
+        <button type="submit" style="background-color: #007bff">Criar</button>
+      </div>
+    </form>
+  </div>
+</div>
+<%-include('../user/rodape.ejs')%>
+

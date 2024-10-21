@@ -1,0 +1,72 @@
+<%-include('./cabecalho.ejs')%>
+ <div class="main-perfil">
+      <div class="perfil">
+        <div class="foto">
+            <img id="profile-picture" src="img/user.webp" alt="Foto do Usuário"/>
+            <div class="logout-pf">
+                <button id="logout-button">Logout</button>
+            </div>
+        </div>
+        <div class="info">
+            <h2>Mayara Duarte</h2>
+            <p>Data de nascimento: <span>25/03/003</span></p>
+            <p>Turma: <span>3 TADS</span></p>
+            <p>Turno: <span>Noite</span></p>
+            <p>Telefone: <span>53999999999</span></p>
+            <p>E-mail: <span>mayaragoncalvesduarte@gmail.com</span></p>
+        </div>
+        <div class="edit-icon">
+            <a href="#" id="edit-button"><img src="img/edit-2.png" alt="Editar"/></a>
+        </div>
+        <form id="perfil-form" action="/salvarperfil" method="POST" enctype="multipart/form-data" style="display: none;">
+            <p>Data de nascimento: <input type="text" name="nascimento" id="nascimento"></p>
+            <p>Telefone: <input type="text" name="telefone" id="telefone"></p>
+            <p>E-mail:<br><input type="email" name="email" id="email"></p>
+            <p>Atualizar Foto:<br><input type="file" name="foto" id="foto-input" accept="image/*"></p> <!-- Input de foto -->
+            <button type="submit">Salvar</button>
+        </form>
+    </div>
+    
+        
+        
+        <div class="historico">
+            <h2>Histórico de Empréstimo</h2>
+            <ul class="menu-options">
+                <li class="active" data-category="all">Todos</li>
+                <li data-category="entregue">Entregue</li>
+                <li data-category="pendente">Pendentes</li>
+                <li data-category="atrasado">Atrasados</li>
+              </ul>
+
+            <div class="historico-item">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="img/livro5.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Título do Livro:</strong> Desbloqueie o poder da sua mente</p>
+                <p><strong>Data de Início:</strong> 01/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> 14/10/2024</p>
+                <p data-category="entregue"><strong>Status:</strong> <span class="status entregue">Entregue</span></p>
+                <p><strong>Observações:</strong> Livro devolvido em boas condições.</p>
+            </div>  
+            </div>
+            <div class="historico-item">   
+                <div class="img-historico">
+                    <img width="auto;" height="150px;" src="img/livro6.jpeg">
+                </div> 
+                <div class="column">      
+                <p><strong>Título do Livro:</strong> Orgulho e preconceito</p>
+                <p><strong>Data de Início:</strong> 05/10/2024</p>
+                <p><strong>Data de Entrega Prevista:</strong> 15/10/2024</p>
+                <p><strong>Data de Devolução Real:</strong> </p>
+                <p data-category="pendente"><strong>Status:</strong> <span class="status pendente">Pendente</span></p>
+                <p><strong>Observações:</strong> </p>
+            </div>  
+            </div>
+            </div>
+    
+</div>
+<script src="perfil.js"></script>
+
+<%-include('./rodape.ejs')%>

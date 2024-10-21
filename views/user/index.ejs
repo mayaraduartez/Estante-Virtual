@@ -1,0 +1,137 @@
+<%-include('./cabecalho.ejs')%>
+    <div class="content">
+        <div class="lado-1">
+            <img src="img/img.png"/>
+        </div>
+        <div class="lado-2">
+          <h1>Biblioteca Online</h1>
+          <p>Sua estante virtual de conhecimentos.</p>
+          <div class="descricao">
+              <h2>Por que escolher a Estante Virtual?</h2>
+              <ul>
+                  <li>
+                      <img src="img/access.png" alt="Acesso imediato" />
+                      <p>Acesso imediato aos livros digitais e físicos da sua escola.</p>
+                  </li>
+                  <li>
+                      <img src="img/cloud.png" alt="Armazenamento na nuvem" />
+                      <p>Melhor agendamento de livros.</p>
+                  </li>
+                  <li>
+                      <img src="img/community.png" alt="Comunidade ativa" />
+                      <p>Junte-se a uma comunidade de leitores da sua escola.</p>
+                  </li>
+              </ul>
+          </div>
+          <button type="button">Explorar Acervo</button>
+          
+      </div>
+      
+    </div>
+    <div class="history">
+        <h1>História da Escola</h1>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <p>A Escola Nova Horizonte foi fundada em 1965 com o objetivo de oferecer uma educação de qualidade em uma pequena cidade, impulsionada pelo sonho de educadores apaixonados. O que começou como uma modesta instituição com apenas duas salas de aula e um pequeno corpo docente, rapidamente ganhou reconhecimento pela sua dedicação ao ensino e pelos valores de inclusão e cidadania que promovia.</p>
+                    <img src="img/img1.jpg" alt="Imagem 1">
+                </div>
+                <div class="slide">
+                    <p>Ao longo das décadas, a escola evoluiu, integrando novas metodologias de ensino, tecnologias e atividades extracurriculares, tornando-se referência na região.</p>
+                    <img src="img/img2.jpg" alt="Imagem 2">
+                </div>
+                <div class="slide">
+                    <p>Hoje, a Escola Nova Horizonte continua a formar gerações de alunos comprometidos com a transformação social, sempre com o lema "Aprender para Crescer".</p>
+                    <img src="img/img3.jpg" alt="Imagem 3">
+                </div>
+            </div>
+            
+        </div>
+        <button class="prev">&#10094;</button>
+           <button class="next">&#10095;</button>
+    </div>
+    <div class="acervo">
+      
+        <h1>Galeria de livros</h1>
+        <div class="search">
+    <input placeholder="Pesquise o nome da obra" type="text" name="text" id="search" class="input">
+  </div>
+        <ul class="menu-options">
+            <li class="active" data-category="all">Todos</li>
+            <li data-category="ficcao">Ficção</li>
+            <li data-category="romance">Romance</li>
+            <li data-category="fantasia">Fantasia</li>
+            <li data-category="ciencia">Ciência</li>
+          </ul>
+        
+        <div class="livros">
+            <div class="livro-card ciencia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/opoderdohabito.png" alt="Donut 1" />
+                  </div>
+                  <h3>O PODER DO HÁBITO</h3>
+                  <p class="autor">Por: Charles Duhigg</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card romance">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/eassimqueacaba.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>É ASSIM QUE ACABA</h3>
+                  <p class="autor">Por: Colleen Hoover</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card ciencia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/livro3.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>DESBLOQUEIE O PODER DA SUA MENTE</h3>
+                  <p class="autor">Por: Michael Arruda</p>
+                  <p class="nao-disponivel">Indisponível</p>
+
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card ficcao">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/livro4.webp" alt="Donut 1" />
+                  </div>
+                  <h3>TEXTOS PARA TOCAR CICATRIZES</h3>
+                  <p class="autor">Por: Igor Pires</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card fantasia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/livro5.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>O PEQUENO PRINCIPE</h3>
+                  <p class="autor">Por: Antoine De Saint-Exupéry</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card romance">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/livro6.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>ORGULHO E PRECONCEITO</h3>
+                  <p class="autor">Por: Jane Austen</p>
+                  <p class="disponivel">Disponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+            <div class="livro-card ciencia">
+                <div class="img-livro" style="display:flex; justify-content: center;">
+                    <img src="img/livro7.jpeg" alt="Donut 1" />
+                  </div>
+                  <h3>ENTENDENDO ALGORITMOS</h3>
+                  <p class="autor">Por: Aditya Y. Barghava</p>
+                  <p class="nao-disponivel">Indisponível</p>
+                <button class="ver-detalhes" type="submit">Ver detalhes</button>
+            </div>
+        </div>
+    </div>
+<script src="index.js"></script>
+<%-include('./rodape.ejs')%>
+
+

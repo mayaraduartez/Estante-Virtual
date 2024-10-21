@@ -1,0 +1,155 @@
+<%-include('./cabecalho.ejs')%>
+<div class="principal column">
+  <div class="search">
+    <input
+      placeholder="Pesquise o nome do usuário"
+      type="text"
+      name="text"
+      id="search"
+      class="input"
+    />
+  </div>
+  <div class="row center">
+    <ul class="menu-options">
+      <li class="active" data-category="all">Todos</li>
+      <li data-category="liberar">Liberar</li>
+      <li data-category="cadastrado">Cadastrados</li>
+    </ul>
+  </div>
+  <div class="wrap">
+    <div class="card" data-category="liberar">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Mayara Duarte</h5>
+        <p class="card-text">Email: mayaraduarte@email.com</p>
+        <p class="card-text">Turma: 3TADS</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success">Liberar</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-category="liberar">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Lucas Correa</h5>
+        <p class="card-text">Email: lucascorrea@email.com</p>
+        <p class="card-text">Turma: 3ALI</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success">Liberar</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-category="cadastrado">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Lucas Correa</h5>
+        <p class="card-text">Email: lucascorrea@email.com</p>
+        <p class="card-text">Turma: 3ALI</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success" style="background-color: #90ee90">
+            Visualizar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-category="liberar">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Lucas Correa</h5>
+        <p class="card-text">Email: lucascorrea@email.com</p>
+        <p class="card-text">Turma: 3ALI</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success">Liberar</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-category="cadastrado">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Lucas Correa</h5>
+        <p class="card-text">Email: lucascorrea@email.com</p>
+        <p class="card-text">Turma: 3ALI</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success" style="background-color: #90ee90">
+            Visualizar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-category="liberar">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Lucas Correa</h5>
+        <p class="card-text">Email: lucascorrea@email.com</p>
+        <p class="card-text">Turma: 3ALI</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success">Liberar</button>
+        </div>
+      </div>
+    </div>
+    <div class="card" data-category="cadastrado">
+      <div class="card-body text-center">
+        <img
+          src="user.png"
+          class="foto-liberar"
+          alt="Foto do usuário"
+          width="100"
+          height="100"
+        />
+        <h5 class="card-title">Lucas Correa</h5>
+        <p class="card-text">Email: lucascorrea@email.com</p>
+        <p class="card-text">Turma: 3ALI</p>
+        <div class="row">
+          <button class="btn btn-delete">Apagar</button>
+          <button class="btn btn-success" style="background-color: #90ee90">
+            Visualizar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="filtro-usuario.js"></script>
+<%-include('../user/rodape.ejs')%>
