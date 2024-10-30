@@ -1,0 +1,108 @@
+<%-include('./cabecalho.ejs')%>
+<div class="visualizar">
+  <h2>Listagem do Acervo</h2>
+  <div class="search">
+    <input
+      placeholder="Pesquise o nome da obra"
+      type="text"
+      name="text"
+      id="search"
+      class="input"
+    />
+  </div>
+  <div class="row center">
+    <ul class="menu-options">
+      <li class="active" data-category="all">Todos</li>
+      <li data-category="disponivel">Disponível</li>
+      <li data-category="nao-disponivel">Indisponível</li>
+    </ul>
+    <div class="relatorio-livros">
+      <button class="relatorio">Emitir Relatório</button>
+    </div>
+  </div>
+
+  <div class="livros edit">
+    <div class="card nao-disponivel">
+      <div class="image_container">
+        <img class="image" src="img/livro3.jpeg" />
+      </div>
+      <div class="title">
+        <h3>Desbloqueie o poder da sua mente</h3>
+      </div>
+      <div class="size">
+        <span>Autor: Michael Arruda</span>
+        <p class="nao-disponivel">Indisponível</p>
+      </div>
+      <div class="action">
+        <button class="cart-button" style="background-color: #007bff">
+          Editar
+        </button>
+        <button class="cart-button" style="background-color: #ec5353">
+          Desabilitar
+        </button>
+      </div>
+    </div>
+    <div class="card disponivel">
+      <div class="image_container">
+        <img class="image" src="img/livro6.jpeg" />
+      </div>
+      <div class="title">
+        <h3>Orgulho e preconceito</h3>
+      </div>
+      <div class="size">
+        <span>Autor: Jane Austen</span>
+        <p class="disponivel">Disponível</p>
+      </div>
+      <div class="action">
+        <button class="cart-button" style="background-color: #007bff">
+          Editar
+        </button>
+        <button class="cart-button" style="background-color: #ec5353">
+          Desabilitar
+        </button>
+      </div>
+    </div>
+    <div class="card disponivel">
+      <div class="image_container">
+        <img class="image" src="img/livro5.jpeg" />
+      </div>
+      <div class="title">
+        <h3>O pequeno príncipe</h3>
+      </div>
+      <div class="size">
+        <span>Autor: Antoine De Saint-Exupéry</span>
+        <p class="disponivel">Disponível</p>
+      </div>
+      <div class="action">
+        <button class="cart-button" style="background-color: #007bff">
+          Editar
+        </button>
+        <button class="cart-button" style="background-color: #ec5353">
+          Desabilitar
+        </button>
+      </div>
+    </div>
+    <div class="card nao-disponivel">
+      <div class="image_container">
+        <img class="image" src="img/livro7.jpeg" />
+      </div>
+      <div class="title">
+        <h3>Entendendo algoritmos</h3>
+      </div>
+      <div class="size">
+        <span>Autor: Aditya Y. Barghava</span>
+        <p class="nao-disponivel">Indisponível</p>
+      </div>
+      <div class="action">
+        <button class="cart-button" style="background-color: #007bff">
+          Editar
+        </button>
+        <button class="cart-button" style="background-color: #ec5353">
+          Desabilitar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/filtro-livros.js"></script>
+<%-include('../user/rodape.ejs')%>

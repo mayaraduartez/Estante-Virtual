@@ -3,65 +3,59 @@ window.addEventListener('load', function() {
     document.querySelector('.lado-2').classList.add('in-view');
 });
 
-
+//filtro
 document.addEventListener('DOMContentLoaded', function() {
-      const menuItems = document.querySelectorAll('.menu-options li');
-      const cards = document.querySelectorAll('.livro-card');
-      const searchInput = document.getElementById('search');
-  
-      // Função de debounce
-      function debounce(func, delay) {
-          let timeout;
-          return function(...args) {
-              clearTimeout(timeout);
-              timeout = setTimeout(() => func.apply(this, args), delay);
-          };
-      }
-  
-      // Função de pesquisa
-      function searchBooks() {
-          const searchTerm = searchInput.value.toLowerCase(); 
-  
-          cards.forEach(card => {
-              const livroTitle = card.querySelector('h3').innerText.toLowerCase(); 
-              const isVisible = card.style.display !== 'none';
-  
-              
-              if (livroTitle.includes(searchTerm) && isVisible) {
-                  card.style.display = 'block'; 
-              } else {
-                  card.style.display = 'none'; 
-              }
-          });
-      }
-  
-      // Adiciona o evento de entrada com debounce para pesquisa
-      searchInput.addEventListener('input', debounce(searchBooks, 300)); 
-  
-      menuItems.forEach(function(menuItem) {
-          menuItem.addEventListener('click', function() {
-              const selectedCategory = this.getAttribute('data-category');
-  
-              menuItems.forEach(function(item) {
-                  item.classList.remove('active');
-              });
-  
-              this.classList.add('active');
-  
-              // Filtrar cartões com base na categoria selecionada
-              cards.forEach(function(card) {
-                  if (selectedCategory === 'all' || card.classList.contains(selectedCategory)) {
-                      card.style.display = 'block'; 
-                  } else {
-                      card.style.display = 'none'; 
-                  }
-              });
-  
-              // Após filtrar, reexecuta a pesquisa para manter a funcionalidade
-              searchBooks();
-          });
-      });
-  });
+    const menuItems = document.querySelectorAll('.menu-options li');
+    const cards = document.querySelectorAll('.livro-card');
+    const searchInput = document.getElementById('search');
+    let selectedCategory = 'all'; // Variável para guardar a categoria selecionada
+
+    // Função de debounce
+    function debounce(func, delay) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), delay);
+        };
+    }
+
+    // Função de pesquisa
+    function searchBooks() {
+        const searchTerm = searchInput.value.toLowerCase(); 
+
+        cards.forEach(card => {
+            const livroTitle = card.querySelector('h3').innerText.toLowerCase(); 
+            const matchesSearch = livroTitle.includes(searchTerm);
+            const matchesCategory = selectedCategory === 'all' || card.classList.contains(selectedCategory);
+
+            // Exibir o cartão apenas se corresponder à pesquisa e à categoria selecionada
+            if (matchesSearch && matchesCategory) {
+                card.style.display = 'block'; 
+            } else {
+                card.style.display = 'none'; 
+            }
+        });
+    }
+
+    // Adiciona o evento de entrada com debounce para pesquisa
+    searchInput.addEventListener('input', debounce(searchBooks, 300)); 
+
+    menuItems.forEach(function(menuItem) {
+        menuItem.addEventListener('click', function() {
+            selectedCategory = this.getAttribute('data-category');
+
+            menuItems.forEach(function(item) {
+                item.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            // Reexecuta a pesquisa para manter a funcionalidade com base na nova categoria
+            searchBooks();
+        });
+    });
+});
+
 
   //trocar slides history
 const slides = document.querySelector('.slides');

@@ -600,6 +600,12 @@ textarea#comentario {
     text-align: center;
     padding: 30px;
 }
+
+.historico p {
+  padding: 1px;
+  margin: 1px;
+  gap: 0px
+}
  
   .historico-item {
     background-color: #fff;
@@ -614,7 +620,6 @@ textarea#comentario {
   }
   
   .historico-item p {
-    margin: 8px 0;
     font-size: 16px;
     color: #979494;
   }
@@ -638,7 +643,10 @@ textarea#comentario {
   
   .img-historico{
     width: 150px;
+    display: flex;
     height: 150px;
+    align-items: center;
+    justify-content: center;
   }
 
   .img-historico img {
@@ -1003,8 +1011,9 @@ p .usuario-link:hover {
 
 .foto{
   display: flex;
+  flex-direction: column;
 }
-.foto img{
+.foto-coment{
   width: 40px;
   height: 40px;
 }
