@@ -12,10 +12,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      sobrenome: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
       data_nascimento: Sequelize.DATEONLY,
       cpf: {
         type: Sequelize.STRING,
@@ -32,8 +28,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-       admin:Sequelize.BOOLEAN,
-       TurmaId: Sequelize.STRING,
+       admin: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
+       turma: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      }
     });
   },
 

@@ -6,9 +6,7 @@ const Usuario = conexao.define(
     {
         nome: {
             type: DataTypes.STRING,
-        },
-        sobrenome: {
-            type: DataTypes.STRING,
+            allowNull: false,
         },
         data_nascimento: {
             type: DataTypes.DATEONLY,
@@ -37,8 +35,13 @@ const Usuario = conexao.define(
         },
         turma: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
-    }
+    },
+    {
+        timestamps: false,
+        tableName: "usuarios",
+      }
 );
 
 module.exports = Usuario;

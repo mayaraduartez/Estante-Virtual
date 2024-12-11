@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
     "cookie-session": "^2.1.0",
     "csv": "^6.3.10",
     "csv-parser": "^3.0.0",
@@ -24,6 +25,7 @@
     "passport-local": "^1.0.0",
     "pg": "^8.13.1",
     "pg-hstore": "^2.3.4",
+    "req-flash": "^0.0.3",
     "sequelize": "^6.37.5",
     "stream": "^0.0.3"
   },

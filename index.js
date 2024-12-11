@@ -6,8 +6,11 @@ var session = require("express-session");
 var passport = require("passport"); 
 var moment = require("moment"); 
 app.locals.moment = moment;
+const flash = require("req-flash");
 
 const principalRoute = require("./router/principalRoute");
+
+const Usuario = require("./models/Usuario");
 
 
 //configuração dos arquivos de visão (VIEWS)
@@ -24,9 +27,20 @@ app.use(
   session({
     secret: "keyboard cat",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
+    cookie: { secure: false } 
   })
 );
+
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Middleware para passar mensagens flash para as views
+app.use((req, res, next) => {
+  res.locals.messages = req.flash(); // Passa todas as mensagens para o template
+  next();
+});
 
 app.use(passport.authenticate("session"));
 

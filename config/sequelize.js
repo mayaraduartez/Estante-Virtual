@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const sequelizeconecta = new Sequelize(
-    "db_estantevirtual",
+    "db_estante_virtual",
     "postgres",
     "postgres",
     {

@@ -13,7 +13,7 @@ header {
     align-items: center;
     padding: 1rem 5%;
     border: 0.5px solid white; 
-    background: linear-gradient(33deg,rgb(183, 253, 243) 14%, rgba(168,245,234,1) 86%);
+    background: linear-gradient(33deg,rgb(183, 253, 243) 10%, rgba(168,245,234,1) 90%);
     
 }
 
@@ -1173,4 +1173,8 @@ input[type="text"] {
 
 .save-container button:hover {
   background-color: #0056b3;
+}
+
+.alert-danger{
+  color: red;
 }

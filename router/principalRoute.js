@@ -7,6 +7,11 @@ const upload = require("../config/upload");
 //login
 router.get('/login', principalController.login);
 
+router.post('/login', principalController.logar);
+
+router.post('/cadastrar', principalController.cadastrar);
+
+
 router.get('/token', principalController.token);
 
 //principal
@@ -18,6 +23,8 @@ router.get('/detalhes', principalController.detalhes);
 router.get('/meuperfil', principalController.meuperfil);
 
 //adm
+
+router.get('/indexadm', principalController.abreprin);
 
 router.get('/perfiladm', principalController.perfiladm);
 

@@ -10,28 +10,40 @@
 <body>
     
 <div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
+	<div class="form-container sign-up-container" >
+		<form method="post" action="/cadastrar">
 			<h1>Criar conta</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-            <input type="text" placeholder="Turma"/>
-			<input type="password" placeholder="Senha" />
-			<input type="confirm-password" placeholder="Confirme a senha" />
-
-            
-			<button>Criar</button>
+			<input type="text" name="nome" required placeholder="Name" />
+			<input type="email" name="email" required placeholder="Email" />
+            <input type="text" name="turma" required placeholder="Turma"/>
+			<input type="password" name="senha" required placeholder="Senha" />
+			<div class="mensagem" style="color: red; text-align: center; padding: 5px;">
+				<% if(msg) {%>
+				  <%= msg %>
+				<%}%>
+				  
+			  </div>
+			<button type="submit">Criar</button>
+			
 		</form>
+		
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Fazer login</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Senha" />
-			<a href="#">Esqueceu a senha?</a>
-			<button>Logar</button>
+		<form method="post" action="/login">
+		  <h1>Fazer login</h1>
+		  <input type="email" name="username" placeholder="Email" />
+		  <input type="password" name="password" placeholder="Senha" />
+		  <a href="/token">Esqueceu a senha?</a>
+		  <div class="mensagem" style="color: red; text-align: center; padding: 5px;">
+			<% if(msg) {%>
+			  <%= msg %>
+			<%}%>
+			  
+		  </div>
+		  <button type="submit">Logar</button>
 		</form>
-	</div>
+	  </div>
+	  
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
@@ -53,3 +65,5 @@
 </html>
 
 <script src="js/main-login.js"></script>
+
+
